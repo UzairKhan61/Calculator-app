@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>NovaCalc - Modern Calculator</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Animated Background -->
+    <div class="background">
+        <div class="orb orb-one"></div>
+        <div class="orb orb-two"></div>
+        <div class="orb orb-three"></div>
+    </div>
+
+    <main class="app">
+
+        <!-- Header -->
+        <header class="topbar">
+
+            <div class="brand">
+                <div class="logo">N</div>
+
+                <div>
+                    <h1>NovaCalc</h1>
+                    <span>Smart Calculator</span>
+                </div>
+            </div>
+
+            <div class="header-actions">
+                <button class="icon-btn" id="historyBtn" title="History">
+                    <span>↶</span>
+                </button>
+
+                <button class="icon-btn" id="themeBtn" title="Toggle Theme">
+                    <span id="themeIcon">☀</span>
+                </button>
+            </div>
+
+        </header>
+
+
+        <!-- Calculator -->
+        <section class="calculator">
+
+            <!-- Display -->
+            <div class="display">
+
+                <div class="display-label">
+                    <span>Expression</span>
+                    <span id="memoryIndicator"></span>
+                </div>
+
+                <div class="expression" id="expression">
+                    0
+                </div>
+
+                <div class="result" id="result">
+                    0
+                </div>
+
+            </div>
+
+
+            <!-- Buttons -->
+            <div class="buttons">
+
+                <!-- Row 1 -->
+                <button class="btn function" data-action="clear">AC</button>
+                <button class="btn function" data-action="backspace">⌫</button>
+                <button class="btn function" data-action="percent">%</button>
+                <button class="btn operator" data-value="/">÷</button>
+
+                <!-- Row 2 -->
+                <button class="btn" data-value="7">7</button>
+                <button class="btn" data-value="8">8</button>
+                <button class="btn" data-value="9">9</button>
+                <button class="btn operator" data-value="*">×</button>
+
+                <!-- Row 3 -->
+                <button class="btn" data-value="4">4</button>
+                <button class="btn" data-value="5">5</button>
+                <button class="btn" data-value="6">6</button>
+                <button class="btn operator" data-value="-">−</button>
+
+                <!-- Row 4 -->
+                <button class="btn" data-value="1">1</button>
+                <button class="btn" data-value="2">2</button>
+                <button class="btn" data-value="3">3</button>
+                <button class="btn operator" data-value="+">+</button>
+
+                <!-- Row 5 -->
+                <button class="btn function" data-action="sqrt">√</button>
+                <button class="btn" data-value="0">0</button>
+                <button class="btn" data-value=".">.</button>
+                <button class="btn equals" data-action="calculate">=</button>
+
+            </div>
+
+
+            <!-- Advanced Functions -->
+            <div class="advanced">
+
+                <button class="small-btn" data-action="square">
+                    x²
+                </button>
+
+                <button class="small-btn" data-action="inverse">
+                    1/x
+                </button>
+
+                <button class="small-btn" data-action="sign">
+                    ±
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- History Panel -->
+        <aside class="history-panel" id="historyPanel">
+
+            <div class="history-header">
+                <div>
+                    <h2>History</h2>
+                    <p>Your recent calculations</p>
+                </div>
+
+                <button id="closeHistory">×</button>
+            </div>
+
+            <div class="history-list" id="historyList">
+                <div class="empty-history">
+                    <div>🧮</div>
+                    <p>No calculations yet</p>
+                </div>
+            </div>
+
+            <button class="clear-history" id="clearHistory">
+                Clear History
+            </button>
+
+        </aside>
+
+        <div class="overlay" id="overlay"></div>
+
+
+        <!-- Footer -->
+        <footer>
+            <span>NovaCalc</span>
+            <span>•</span>
+            <span>Built with HTML, CSS & JavaScript</span>
+        </footer>
+
+    </main>
+
+
+    <!-- Toast -->
+    <div class="toast" id="toast">
+        Copied!
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
